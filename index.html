@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Góc Truyện Của Tôi</title>
+    <style>
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; margin: 0; background: #f4f4f4; color: #333; }
+        header { background: #2c3e50; color: white; padding: 1rem; text-align: center; }
+        .container { max-width: 800px; margin: 20px auto; background: white; padding: 20px; border-radius: 8px; shadow: 0 0 10px rgba(0,0,0,0.1); }
+        h1 { color: #2c3e50; }
+        .chapter-list { list-style: none; padding: 0; }
+        .chapter-list li { border-bottom: 1px solid #ddd; padding: 10px 0; }
+        .chapter-list a { text-decoration: none; color: #3498db; font-weight: bold; }
+        #story-content { display: none; }
+        .btn-back { background: #95a5a6; color: white; border: none; padding: 10px 15px; cursor: pointer; border-radius: 5px; margin-bottom: 20px; }
+        .content-text { white-space: pre-line; font-size: 1.2rem; }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Tác Phẩm Của Tôi</h1>
+</header>
+
+<div class="container" id="main-page">
+    <h2>Danh sách chương</h2>
+    <ul class="chapter-list">
+        <li><a href="#" onclick="showChapter('Chương 1: Khởi Đầu', 'Nội dung chương 1 của bạn viết ở đây...')">Chương 1: Khởi Đầu</a></li>
+        <li><a href="#" onclick="showChapter('Chương 2: Sóng Gió', 'Nội dung chương 2 tiếp tục tại đây...')">Chương 2: Sóng Gió</a></li>
+    </ul>
+</div>
+
+<div class="container" id="story-content">
+    <button class="btn-back" onclick="showHome()">← Quay lại danh sách</button>
+    <h2 id="chapter-title"></h2>
+    <div class="content-text" id="chapter-body"></div>
+</div>
+
+<script>
+    function showChapter(title, body) {
+        document.getElementById('main-page').style.display = 'none';
+        document.getElementById('story-content').style.display = 'block';
+        document.getElementById('chapter-title').innerText = title;
+        document.getElementById('chapter-body').innerText = body;
+        window.scrollTo(0,0);
+    }
+
+    function showHome() {
+        document.getElementById('main-page').style.display = 'block';
+        document.getElementById('story-content').style.display = 'none';
+    }
+</script>
+
+</body>
+</html>
